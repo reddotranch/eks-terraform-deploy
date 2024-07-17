@@ -85,18 +85,18 @@ variable "sso_admin_group_id" {
 #   default     = "ami-03c983f9003cb9cd1"
 # }
 
-# variable "instance_type" {
-#   description = "The instance type for the instances"
-#   type        = string
-#   default     = "t2.medium"
-# }
+variable "instance_type" {
+  description = "The instance type for the instances"
+  type        = string
+  default     = "t2.medium"
+}
 
 
-# variable "key_name" {
-#   description = "The key name for the instances"
-#   type        = string
-#   default     = "DevOps_key"
-# }
+variable "key_name" {
+  description = "The key name for the instances"
+  type        = string
+  default     = "DevOps_key"
+}
 
 # variable "s3_bucket" {
 #   description = "The name of the S3 bucket for storing Terraform state"
