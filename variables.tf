@@ -15,12 +15,12 @@ variable "main-region" {
 
 variable "cluster_name" {
   type    = string
-  default = "dominion-cluster"
+  default = "ranch-cluster"
 }
 
 variable "rolearn" {
   description = "Add admin role to the aws-auth configmap"
-  default     = "arn:aws:iam::322266404742:role/terraform-create-role"
+  default     = "arn:aws:iam::559347408171:role/terraform-create-role"
 }
 
 ################################################################################
@@ -72,23 +72,23 @@ variable "env_name" {
 # AWS SSO Variables
 ################################################################################
 
-variable "sso_admin_group_id" {
-  description = "AWS_SSO Admin Group ID"
-  type        = string
-  sensitive   = true
-  default     = "b4f8f4f8-e011-7046-0637-993dc10edd76"
-}
-
-# variable "ami_id" {
-#   description = "The AMI ID for the instances"
+# variable "sso_admin_group_id" {
+#   description = "AWS_SSO Admin Group ID"
 #   type        = string
-#   default     = "ami-03c983f9003cb9cd1"
+#   sensitive   = true
+#   default     = "b4f8f4f8-e011-7046-0637-993dc10edd76"
 # }
+
+variable "ami_id" {
+  description = "The AMI ID for the instances"
+  type        = string
+  default     = "ami-004a0173a724e2261"
+}
 
 variable "instance_type" {
   description = "The instance type for the instances"
   type        = string
-  default     = "t2.medium"
+  default     = "t3.medium"
 }
 
 
@@ -98,14 +98,14 @@ variable "key_name" {
   default     = "DevOps_key"
 }
 
-# variable "s3_bucket" {
-#   description = "The name of the S3 bucket for storing Terraform state"
-#   type        = string
-#   default     = "terraform-state-bucket-fusi"
-# }
+variable "s3_bucket" {
+  description = "The name of the S3 bucket for storing Terraform state"
+  type        = string
+  default     = "terraform-state-bucket-ranch"
+}
 
-# variable "dynamodb_table" {
-#   description = "The name of the DynamoDB table for state locking"
-#   type        = string
-#   default     = "terraform-lock-table"
-# }
+variable "dynamodb_table" {
+  description = "The name of the DynamoDB table for state locking"
+  type        = string
+  default     = "terraform-lock-table"
+}

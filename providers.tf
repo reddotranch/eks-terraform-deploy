@@ -1,7 +1,10 @@
 
 provider "aws" {
-  region = us-west-2
+  region = "us-west-2"
   alias  = "us-west-2"
+  assume_role {
+    role_arn = "arn:aws:iam::559347408171:role/terraformActions"
+  }
 }
 
 provider "kubernetes" {

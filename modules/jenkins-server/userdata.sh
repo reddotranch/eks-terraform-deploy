@@ -14,4 +14,9 @@ sudo apt-get install jenkins -y
 sudo systemctl start jenkins
 sudo systemctl enable jenkins
 
+#Install Nginx
+sudo apt-get install nginx -y
 
+# Start Nginx service
+sudo systemctl start nginx
+sudo systemctl enable nginx
